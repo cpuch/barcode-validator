@@ -1,3 +1,3 @@
 # Changelog
 
-All notable changes to `laravel-barcode-validator` will be documented in this file.
+All notable changes to `barcode-validator` will be documented in this file.

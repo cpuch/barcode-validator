@@ -20,7 +20,7 @@ composer require cpuch/barcode-validator
 In a controller you can use the class as a validator rule like this :
 
 ```php
-use Cpuch\BarcodeValidator\BarcodeValidator\BarcodeValidatorRule;
+use Cpuch\BarcodeValidator\Rules\BarcodeValidatorRule;
 
 $request->validate([
     'barcode' => ['required', new BarcodeValidatorRule],

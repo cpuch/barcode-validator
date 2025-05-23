@@ -1,9 +1,9 @@
 # Barcode Validator
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/cpuch/laravel-barcode-validator.svg?style=flat-square)](https://packagist.org/packages/cpuch/laravel-barcode-validator)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/cpuch/laravel-barcode-validator/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/cpuch/laravel-barcode-validator/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/cpuch/laravel-barcode-validator/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/cpuch/laravel-barcode-validator/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/cpuch/laravel-barcode-validator.svg?style=flat-square)](https://packagist.org/packages/cpuch/laravel-barcode-validator)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/cpuch/barcode-validator.svg?style=flat-square)](https://packagist.org/packages/cpuch/barcode-validator)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/cpuch/barcode-validator/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/cpuch/barcode-validator/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/cpuch/barcode-validator/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/cpuch/barcode-validator/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/cpuch/barcode-validator.svg?style=flat-square)](https://packagist.org/packages/cpuch/barcode-validator)
 
 Simple validator to check for correctly formatted UPC or EAN barcodes.
 

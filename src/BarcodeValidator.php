@@ -14,7 +14,7 @@ class BarcodeValidator
      * @param  string  $value  The barcode value to validate.
      * @return bool True if the barcode is valid, false otherwise.
      */
-    public static function validate($value): bool
+    public static function validate(string $value): bool
     {
         // Check if the barcode is of valid length and contains only digits
         if (! preg_match('/^[0-9]{8}$|^[0-9]{12}$|^[0-9]{13}$/', $value)) {

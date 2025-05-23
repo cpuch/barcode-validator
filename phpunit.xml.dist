@@ -1,31 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.3/phpunit.xsd"
-	backupGlobals="false"
-	bootstrap="vendor/autoload.php"
-	colors="true"
-	processIsolation="false"
-	stopOnFailure="false"
-	executionOrder="random"
-	failOnWarning="true"
-	failOnRisky="true"
-	failOnEmptyTestSuite="true"
-	beStrictAboutOutputDuringTests="true"
-	cacheDirectory=".phpunit.cache"
-	backupStaticProperties="false"
->
-    <testsuites>
-        <testsuite name="BarcodeValidator">
-            <directory>tests</directory>
-        </testsuite>
-    </testsuites>
-    <logging>
-        <junit outputFile="build/report.junit.xml"/>
-    </logging>
-    <source>
-        <include>
-            <directory suffix=".php">./src</directory>
-        </include>
-    </source>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.3/phpunit.xsd" backupGlobals="false" bootstrap="vendor/autoload.php" colors="true" processIsolation="false" stopOnFailure="false" executionOrder="random" failOnWarning="true" failOnRisky="true" failOnEmptyTestSuite="true" beStrictAboutOutputDuringTests="true" cacheDirectory=".phpunit.cache" backupStaticProperties="false">
+	<testsuites>
+		<testsuite name="BarcodeValidator">
+			<directory>tests</directory>
+		</testsuite>
+
+		<!-- These are for running specific categories of tests only -->
+		<!-- Note: These WILL cause warnings if you run the full test suite -->
+		<!-- Only use these when you specifically want to run just these tests -->
+		<!-- <testsuite name="Unit">
+			<directory>tests/Unit</directory>
+		</testsuite>
+		<testsuite name="Rules">
+			<directory>tests/Unit/Rules</directory>
+		</testsuite> -->
+	</testsuites>
+	<coverage>
+		<report>
+			<html outputDirectory="build/coverage"/>
+			<clover outputFile="build/logs/clover.xml"/>
+		</report>
+	</coverage>
+	<logging>
+		<junit outputFile="build/report.junit.xml"/>
+	</logging>
+	<source>
+		<include>
+			<directory suffix=".php">./src</directory>
+		</include>
+	</source>
+	<php>
+		<ini name="display_errors" value="true"/>
+		<ini name="error_reporting" value="-1"/>
+		<env name="APP_ENV" value="testing"/>
+	</php>
 </phpunit>

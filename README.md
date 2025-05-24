@@ -15,6 +15,12 @@ You can install the package via composer:
 composer require cpuch/barcode-validator
 ```
 
+You can publish the translations files with:
+
+```bash
+php artisan vendor:publish --tag="barcode-validator-translations"
+```
+
 ## Usage
 
 In a controller you can use the class as a validator rule like this :

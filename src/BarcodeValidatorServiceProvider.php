@@ -12,6 +12,11 @@ class BarcodeValidatorServiceProvider extends ServiceProvider
     public function boot(): void
     {
         //
+        $this->loadTranslationsFrom(__DIR__.'/lang', 'barcode-validator');
+
+        $this->publishes([
+            __DIR__.'/lang' => resource_path('lang/vendor/barcode-validator'),
+        ], 'barcode-validator-translations');
     }
 
     /**

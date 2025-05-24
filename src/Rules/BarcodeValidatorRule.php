@@ -19,7 +19,7 @@ class BarcodeValidatorRule implements ValidationRule
     public function validate(string $attribute, mixed $value, \Closure $fail): void
     {
         if (! BarcodeValidator::validate($value)) {
-            $fail('The :attribute is not a valid UPC or EAN barcode.');
+            $fail(__('barcode-validator::messages.invalid_barcode'));
         }
     }
 }

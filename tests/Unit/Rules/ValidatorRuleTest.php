@@ -32,9 +32,9 @@ class ValidatorRuleTest extends TestCase
                 return 'Error message';
             };
 
-            $rule->validate('barcode', $barcode[0], $failCallback);
+            $rule->validate('barcode', $barcode, $failCallback);
 
-            $this->assertFalse($failCalled, "Validation should pass for {$barcode[0]}");
+            $this->assertFalse($failCalled, "Validation should pass for {$barcode}");
         }
     }
 
@@ -55,9 +55,9 @@ class ValidatorRuleTest extends TestCase
                 return $message;
             };
 
-            $rule->validate('barcode', $barcode[0], $failCallback);
+            $rule->validate('barcode', $barcode, $failCallback);
 
-            $this->assertTrue($failCalled, "Validation should fail for {$barcode[0]}");
+            $this->assertTrue($failCalled, "Validation should fail for {$barcode}");
             $this->assertNotNull($failMessage, 'Fail message should be set');
         }
     }
@@ -68,9 +68,17 @@ class ValidatorRuleTest extends TestCase
     public static function validBarcodeProvider(): array
     {
         return [
-            ['96385074'],         // Valid EAN-8
-            ['042100005264'],     // Valid UPC-A
-            ['5901234123457'],    // Valid EAN-13
+            // EAN-8
+            '96385074',
+            // ['73513537'],
+
+            // UPC-A
+            '829576019311',
+
+            // EAN-13
+            '5901234123457',
+            // ['4006381333931'],
+            // ['8711253001202'],
         ];
     }
 
@@ -80,11 +88,25 @@ class ValidatorRuleTest extends TestCase
     public static function invalidBarcodeProvider(): array
     {
         return [
-            ['ABC12345'],         // Invalid format (contains letters)
-            ['123456789'],        // Invalid length (9 digits)
-            ['5901234123458'],    // Invalid check digit
-            [''],                 // Empty string
-            ['123456'],           // Too short
+            // Format invalide
+            'ABC12345',
+            '12345-6789',
+            '123,456',
+
+            // Longueur invalide
+            '123456789',
+            '1234567890123',
+            '12345',
+            '',
+
+            // Check digit invalide
+            '96385073',
+            '5901234123458',
+
+            // Valeurs limites
+            // ['00000000'],
+            // ['000000000000'],
+            // ['0000000000000'],
         ];
     }
 }

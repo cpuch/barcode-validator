@@ -2,6 +2,10 @@
 
 All notable changes to `barcode-validator` will be documented in this file.
 
+## v1.0.7 - 2025-06-02
+
+**Full Changelog**: https://github.com/cpuch/barcode-validator/compare/v1.0.6...v1.0.7
+
 ## v1.0.6 - 2025-05-27
 
 **Full Changelog**: https://github.com/cpuch/barcode-validator/compare/v1.0.5...v1.0.6

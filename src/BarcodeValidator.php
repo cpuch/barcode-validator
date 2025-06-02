@@ -28,7 +28,7 @@ class BarcodeValidator
         $check_digit = (int) Str::substr($value, -1);
 
         // Validate the check digit
-        return self::calculateCheckDigit($data, $length) === $check_digit;
+        return self::calculateCheckDigit($data) === $check_digit;
     }
 
     /**
@@ -37,13 +37,16 @@ class BarcodeValidator
      * @param  string  $data  The data portion of the barcode (without check digit).
      * @return int The calculated check digit.
      */
-    private static function calculateCheckDigit(string $data, int $length): int
+    private static function calculateCheckDigit(string $data): int
     {
         // Initialize sum for weighted calculation
         $check_sum = 0;
 
         // Convert string to array of digits
         $digits = str_split($data);
+
+        // Process digits from right to left
+        $digits = array_reverse($digits);
 
         // Calculate weighted sum
         // Odd positions (index 0,2,4...) × 3

@@ -74,9 +74,11 @@ class ValidatorRuleTest extends TestCase
 
             // UPC-A
             '829576019311',
+            '822603004809',
 
             // EAN-13
             '5901234123457',
+            '3760068237264',
             // ['4006381333931'],
             // ['8711253001202'],
         ];
@@ -102,6 +104,7 @@ class ValidatorRuleTest extends TestCase
             // Check digit invalide
             '96385073',
             '5901234123458',
+            '3760068237265',
 
             // Valeurs limites
             // ['00000000'],
